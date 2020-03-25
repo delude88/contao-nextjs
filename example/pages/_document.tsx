@@ -2,6 +2,7 @@ import Document, {Head, Main, NextScript} from 'next/document'
 import {Provider as StyletronProvider} from 'styletron-react'
 import {styletron} from '../styletron'
 import {DocumentProps} from "next/dist/next-server/lib/utils";
+import React from "react";
 
 interface DocProps extends DocumentProps {
     stylesheets: any

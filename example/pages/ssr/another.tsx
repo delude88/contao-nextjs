@@ -1,4 +1,5 @@
-import {withContao} from "../../lib/contao";
+
+import {withContao} from "use-contao";
 import Link from "next/link";
 import {Button} from "baseui/button";
 
@@ -21,7 +22,7 @@ const SSRPage = ({contao}) => {
             </p>
             <p>
                 <Link href="/">
-                        <Button>Back to overview</Button>
+                    <Button>Back to overview</Button>
                 </Link>
             </p>
         </div>

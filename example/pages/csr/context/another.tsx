@@ -1,11 +1,11 @@
 import Link from "next/link";
 import {Button} from "baseui/button";
-import {withContao} from "../../../lib/contao";
+import {withContao} from "use-contao";
 
 const Page = ({contao}) => {
     return (
         <>
-            <h1>Dynamic and Context API usage of Contao API</h1>
+            <h1>Another dynamic and Context API usage of Contao API</h1>
             {contao && (
                 <>
                     <h1>{contao.sitemap.title}</h1>
@@ -15,15 +15,15 @@ const Page = ({contao}) => {
                 </>
             )}
             <p>
-                <Link href="/csr/context/another">
+                <Link href="/csr/context/">
                     <Button>
-                        Navigate to another page
+                        Navigate to page before
                     </Button>
                 </Link>
             </p>
             <p>
                 <Link href="/">
-                        <Button>Back to overview</Button>
+                    <Button>Back to overview</Button>
                 </Link>
             </p>
         </>

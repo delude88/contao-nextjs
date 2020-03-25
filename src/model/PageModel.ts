@@ -27,5 +27,5 @@ export const PageModelFromJson = (json: any): PageModel => ({
     stop: json.stop,
     title: json.title,
     tstamp: parseInt(json.tstamp),
-    subPages: json.subPages.map(j => PageModelFromJson(j))
+    subPages: json.subPages.map((j: any) => PageModelFromJson(j))
 });

@@ -1,18 +1,19 @@
 import Link from "next/link";
 import {Button} from "baseui/button";
-import {withContao} from "../../../lib/contao";
+import {withContao} from "use-contao";
+
 
 const SSRPage = ({contao}) => {
     return (
         <div>
-            <h1>SSR and Context API usage of Contao API</h1>
+            <h1>Another SSR and Context API usage of Contao API</h1>
             {contao && contao.sitemap && (
                 <h1>{contao.sitemap.title}</h1>
             )}
             <p>
-                <Link href="/ssr/context/another">
+                <Link href="/ssr/context">
                     <Button>
-                        Navigate to another page
+                        Navigate to page before
                     </Button>
                 </Link>
             </p>

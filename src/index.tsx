@@ -1,12 +1,15 @@
-import React, {createContext, useContext, useEffect, useState} from "react";
+import * as React from "react";
+import {createContext, useContext, useEffect, useState} from "react";
 import {getContao} from "./util";
 import {ContaoModel} from "./model/ContaoModel";
+import {GetStaticProps} from "next";
 
-const ContaoContext = createContext<ContaoModel>(null);
+const ContaoContext = createContext<ContaoModel | undefined>(undefined);
 
-const useContaoContext = () => useContext<ContaoModel>(ContaoContext);
+const useContaoContext = () => useContext<ContaoModel | undefined>(ContaoContext);
+
 const useContaoCSR = (server: string) => {
-    const [contao, setContao] = useState<ContaoModel>(null);
+    const [contao, setContao] = useState<ContaoModel | undefined>(undefined);
 
     useEffect(() => {
         //console.log("Fetching contao on client side");
@@ -26,7 +29,7 @@ export const ContaoProvider = (props: {
     server: string,
     contao?: ContaoModel
 }) => {
-    const [contao, setContao] = useState<ContaoModel>(props.contao);
+    const [contao, setContao] = useState<ContaoModel | undefined>(props.contao);
     useEffect(() => {
         if (!contao) {
             //console.log("Fetching contao by Provider");
@@ -36,7 +39,7 @@ export const ContaoProvider = (props: {
                 );
 
         }
-    }, [contao]);
+    }, [contao, props.server]);
 
     return (
         <ContaoContext.Provider value={contao}>
@@ -51,8 +54,8 @@ export const withContaoContext = (WrappedComponent: any) => () => {
     return <WrappedComponent contao={useContaoContext()}/>;
 };
 
-const withContaoSSR = (WrappedComponent: any, server?: string) => {
-    const WithContaoSSRComp = ({contao, url}) => {
+const withContaoSSR = (WrappedComponent: any, server: string) => {
+    const WithContaoSSRComp = ({contao}: any) => {
         return (
             <ContaoProvider server={server} contao={contao}>
                 <WrappedComponent contao={contao}/>
@@ -69,4 +72,17 @@ const withContaoSSR = (WrappedComponent: any, server?: string) => {
     };
 
     return WithContaoSSRComp;
+};
+
+export const useStaticProps = (server: string, revalidate?: number | boolean): GetStaticProps => {
+    return async () => {
+        const contao = await getContao(server);
+
+        return {
+            props: {
+                contao
+            },
+            revalidate: revalidate
+        };
+    };
 };

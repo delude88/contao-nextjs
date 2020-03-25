@@ -1,6 +1,6 @@
-import {useContao} from "../../lib/contao";
 import Link from "next/link";
 import {Button} from "baseui/button";
+import {useContao} from "use-contao";
 
 const server: string = "https://contao.v22019048220387295.hotsrv.de";
 export default () => {
@@ -27,7 +27,7 @@ export default () => {
             </p>
             <p>
                 <Link href="/">
-                        <Button>Back to overview</Button>
+                    <Button>Back to overview</Button>
                 </Link>
             </p>
         </>

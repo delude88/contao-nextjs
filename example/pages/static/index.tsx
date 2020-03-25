@@ -1,19 +1,21 @@
+import {GetStaticProps} from "next";
 import Link from "next/link";
 import {Button} from "baseui/button";
-import {withContao} from "../../../lib/contao";
+import {useStaticProps} from "use-contao";
 
+const server = "https://contao.v22019048220387295.hotsrv.de";
 
-const SSRPage = ({contao}) => {
+const StaticPage = ({contao}) => {
     return (
         <div>
-            <h1>Another SSR and Context API usage of Contao API</h1>
+            <h1>SSR usage of Contao API</h1>
             {contao && contao.sitemap && (
                 <h1>{contao.sitemap.title}</h1>
             )}
             <p>
-                <Link href="/ssr/context">
+                <Link href="/static/another">
                     <Button>
-                        Navigate to page before
+                        Navigate to another page
                     </Button>
                 </Link>
             </p>
@@ -25,4 +27,7 @@ const SSRPage = ({contao}) => {
         </div>
     );
 };
-export default withContao(SSRPage);
+
+export const getStaticProps: GetStaticProps = useStaticProps(server);
+
+export default StaticPage;

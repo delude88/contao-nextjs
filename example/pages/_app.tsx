@@ -3,7 +3,7 @@ import App from 'next/app'
 import {Provider as StyletronProvider} from 'styletron-react'
 import {debug, styletron} from '../styletron'
 import {BaseProvider, LightTheme} from "baseui";
-import {ContaoProvider} from "../lib/contao";
+import {ContaoProvider} from "use-contao";
 
 const server: string = "https://contao.v22019048220387295.hotsrv.de";
 
