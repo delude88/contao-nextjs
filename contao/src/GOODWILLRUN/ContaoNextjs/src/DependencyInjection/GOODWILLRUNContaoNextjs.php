@@ -1,6 +1,6 @@
 <?php
 
-namespace GOODWILLRUN\DistributedMail\DependencyInjection;
+namespace GOODWILLRUN\ContaoNextjs\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

@@ -1,0 +1,44 @@
+{
+  "name": "goodwillrun/contao-nextjs",
+  "description": "Interface between Contao and Next.js",
+  "type": "contao-bundle",
+  "version": "0.2",
+  "keywords": [
+    "contao",
+    "next.js",
+    "next",
+    "react",
+    "rest",
+    "api"
+  ],
+  "require": {
+    "php": "^7.1",
+    "contao/core-bundle": "^4.9"
+  },
+  "autoload": {
+    "psr-4": {
+      "GOODWILLRUN\\ContaoNextjs\\": "src/"
+    },
+    "classmap": [
+      "src/Resources/contao/"
+    ],
+    "exclude-from-classmap": [
+      "src/Resources/contao/config/",
+      "src/Resources/contao/dca/"
+    ]
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^2.10",
+    "contao/manager-plugin": "^2.0"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Tobias Hegemann",
+      "email": "hegemann@goodwillrun.de"
+    }
+  ],
+  "extra": {
+    "contao-manager-plugin": "GOODWILLRUN\\ContaoNextjs\\ContaoManager\\Plugin"
+  }
+}

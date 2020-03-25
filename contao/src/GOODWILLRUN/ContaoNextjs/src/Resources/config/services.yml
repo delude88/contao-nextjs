@@ -1,0 +1,15 @@
+services:
+  GOODWILLRUN\ContaoNextjs\Classes\Controller\NextApiController:
+    arguments:
+      - '%kernel.project_dir%'
+      - "@session"
+      - "@contao.framework"
+    tags: ['controller.service_arguments']
+  _instanceof:
+    Contao\CoreBundle\Framework\FrameworkAwareInterface:
+      calls:
+        - ["setFramework", ["@contao.framework"]]
+
+    Symfony\Component\DependencyInjection\ContainerAwareInterface:
+      calls:
+        - ["setContainer", ["@service_container"]]

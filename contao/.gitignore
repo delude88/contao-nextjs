@@ -26,3 +26,4 @@ package-lock.json
 /system/modules/*/.skip
 
 /node_modules/
+gulpfile.js

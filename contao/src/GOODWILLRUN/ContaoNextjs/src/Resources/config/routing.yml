@@ -1,0 +1,7 @@
+contaonextjs:
+  path: /next/{slug}
+  defaults:
+    _controller: GOODWILLRUN\ContaoNextjs\Classes\Controller\NextAPIController
+    _scope: frontend
+  requirements:
+    slug: '.+'

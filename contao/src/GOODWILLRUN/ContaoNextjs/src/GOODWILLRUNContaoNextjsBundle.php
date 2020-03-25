@@ -1,6 +1,6 @@
 <?php
 
-namespace GOODWILLRUN\DistributedMail;
+namespace GOODWILLRUN\ContaoNextjs;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
