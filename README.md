@@ -1,4 +1,4 @@
-# use-contao
+# use-contao-next
 This package provides an example implementation using React Hooks inside Next.js.
 
 ### Requirements
