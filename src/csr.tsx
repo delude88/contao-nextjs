@@ -84,8 +84,6 @@ export const useContao = (request: ContaoRequest) => {
         if (!context)
             return true;
 
-        console.log("Context available");
-
         return (request.module != undefined && !context.modules.some((m) => m.id === request.module)) ||
             (request.modules != undefined && (!request.modules.every(rq => context.modules.some(m => m.id === rq)))) ||
             (request.page != undefined && (!context.pages.some(p => p.url === request.page))) ||
@@ -111,7 +109,6 @@ export const useContao = (request: ContaoRequest) => {
     useEffect(() => {
         if (loading) {
             if (!context || context && request.server && request.server !== context.server) {
-                console.log("useContao: Fetch data");
                 // No context or different server given, so fetch and return without using Context API
                 if (!request.server)
                     return console.error("No host specified or missing Contao Provider");
@@ -128,20 +125,16 @@ export const useContao = (request: ContaoRequest) => {
                     }
                 )
             } else {
-                console.log("useContao: Fetch data using Context API");
                 // Use Context API to fetch and return
                 context.fetch(
                     request
                 );
             }
-        } else {
-            console.log("useContao: Using existing data from Content API cache");
         }
     }, []);
 
     useEffect(() => {
         if (context && state.server === context.server) {
-            console.log("useContao: Sync new data from Context API");
             setState(context);
             setLoading(false);
         }

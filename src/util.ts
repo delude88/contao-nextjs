@@ -24,7 +24,6 @@ const resolveLanguage = (lang?: string, extend?: boolean): string => {
 };
 
 const getSitemap = (server: string, lang?: string): Promise<PageModel | null> => {
-    console.log("getSitemap");
     return fetch(server + Routes.sitemap + resolveLanguage(lang))
         .then((r: Response) => r.json())
         .then((a: any) => a.length > 0 ? PageModelFromJson(a[0]) : null);

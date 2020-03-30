@@ -12,6 +12,5 @@ module.exports = {
         config.externals['styletron-server'] = 'styletron-server';
         return config;
     },
-    env: {
-    }
+    target: 'serverless'
 };

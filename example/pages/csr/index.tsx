@@ -1,22 +1,10 @@
 import Link from "next/link";
 import {Button} from "baseui/button";
-import {useEffect} from "react";
 import {useContao} from "use-contao";
 
 const server: string = "https://contao.v22019048220387295.hotsrv.de";
 export default () => {
     const contao = useContao({server: {host: server}, sitemap: true});
-
-    useEffect(() => {
-        if (contao) {
-            console.log("Have a contao update");
-            console.log(contao);
-        } else {
-            console.log("Contao is null");
-        }
-    }, [contao]);
-
-    console.log("RENDER");
 
     return (
         <>

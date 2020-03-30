@@ -6,7 +6,6 @@ import {useStaticProps} from "use-contao";
 const server = "https://contao.v22019048220387295.hotsrv.de";
 
 const StaticPage = ({contao}) => {
-    console.log(contao);
     return (
         <div>
             <h1>Static usage of Contao API</h1>

@@ -15,29 +15,41 @@ Further a dynamic binding shall be implemented to assign different Contao Conten
 
 ## Example
 
+[Live Example](https://use-contao.tobiashegemann.now.sh/)
+
+### Using example
+
 The example requires an existing installation of Contao 4.4+ and the Contao Content API.
 You can install the Contao Content API by using the Contao Manager or the composer CLI:
 
     composer require dieschittigs/contao-content-api
     
 
+To build the example, run
+    
+    npm run build
+    
+Then the example can be started using
+
+    cd example && npm run start
+    
+
 When building the example the resulting pages will be:
 
     Page                                                           Size     First Load
-    ┌ ○ /                                                          1.84 kB     78.5 kB
-    ├   /_app                                                      11.9 kB     76.7 kB
-    ├ ○ /404                                                       2.61 kB     79.3 kB
-    ├ ○ /csr                                                       1.14 kB     82.9 kB
-    ├ ○ /csr/another                                               1.15 kB     82.9 kB
-    ├ ○ /csr/context                                               1.13 kB     82.9 kB
-    ├ ○ /csr/context/another                                       1.13 kB     82.9 kB
-    ├ λ /ssr                                                       1.15 kB     82.9 kB
-    ├ λ /ssr/another                                               1.15 kB     82.9 kB
-    ├ ○ /ssr/context                                               1.12 kB     82.9 kB
-    ├ ○ /ssr/context/another                                       1.12 kB     82.9 kB
-    ├ ● /static                                                    392 B       82.2 kB
-    └ ● /static/another                                            397 B       82.2 kB
-
-    λ  (Server)  server-side renders at runtime (uses getInitialProps or getServerSideProps)
+    ┌ ○ /                                                          1.83 kB     80.8 kB
+    ├   /_app                                                      11.2 kB       79 kB
+    ├ ○ /404                                                       3.15 kB     82.1 kB
+    ├ ○ /csr                                                       451 B       84.6 kB
+    ├ ○ /csr/another                                               457 B       84.6 kB
+    ├ ○ /csr/context                                               419 B       84.5 kB
+    ├ ○ /csr/context/another                                       425 B       84.5 kB
+    ├ λ /page/[...slug]                                            343 B       79.3 kB
+    ├ λ /ssr                                                       416 B       84.5 kB
+    ├ λ /ssr/another                                               500 B       84.6 kB
+    ├ ● /static                                                    393 B       84.5 kB
+    └ ● /static/another                                            397 B       84.5 kB
+    
+    λ  (Lambda)  server-side renders at runtime (uses getInitialProps or getServerSideProps)
     ○  (Static)  automatically rendered as static HTML (uses no initial props)
     ●  (SSG)     automatically generated as static HTML + JSON (uses getStaticProps)

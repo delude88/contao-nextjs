@@ -1,14 +1,9 @@
 import Link from "next/link";
 import {Button} from "baseui/button";
-import {ContaoProvider, useContao} from "use-contao";
-import {useEffect} from "react";
+import {useContao} from "use-contao";
 
 export default () => {
     const contao = useContao({sitemap: true});
-
-    useEffect(() => {
-        console.log("update");
-    }, [contao]);
 
     return (
         <>
