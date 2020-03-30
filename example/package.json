@@ -1,8 +1,7 @@
 {
   "name": "use-contao-next-example",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Nextjs interface for contao",
-  "main": "index.js",
   "private": true,
   "scripts": {
     "dev": "next",
@@ -16,21 +15,21 @@
   "author": "Tobias Hegemann <hegemann@goodwillrun.de>",
   "license": "MIT",
   "dependencies": {
-    "baseui": "^9.65.0",
-    "next": "^9.3.1",
-    "node-fetch": "^2.6.0",
-    "react": "file:../node_modules/react",
-    "react-dom": "file:../node_modules/react-dom",
+    "baseui": "^9.65.4",
+    "isomorphic-unfetch": "latest",
+    "next": "^9.3.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "styletron-engine-atomic": "^1.4.6",
     "styletron-react": "^5.2.7",
     "styletron-server": "^3.0.4",
     "swr": "^0.1.18",
-    "use-contao": "file:.."
+    "use-contao-next": "0.2.3"
   },
   "devDependencies": {
-    "@types/node": "^13.9.3",
+    "@types/node": "^13.9.5",
     "@types/node-fetch": "^2.5.5",
-    "@types/react": "^16.9.25",
+    "@types/react": "^16.9.27",
     "@types/react-dom": "^16.9.5",
     "@types/styletron-engine-atomic": "^1.1.0",
     "@types/styletron-react": "^5.0.2",

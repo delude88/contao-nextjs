@@ -1,4 +1,4 @@
-import {withContaoSSR} from "use-contao";
+import {withContaoSSR} from "use-contao-next";
 import Link from "next/link";
 import {Button} from "baseui/button";
 

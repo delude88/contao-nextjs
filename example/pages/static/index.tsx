@@ -1,7 +1,7 @@
 import {GetStaticProps} from "next";
 import Link from "next/link";
 import {Button} from "baseui/button";
-import {useStaticProps} from "use-contao";
+import {useStaticContao} from "use-contao-next";
 
 const server = "https://contao.v22019048220387295.hotsrv.de";
 
@@ -28,6 +28,6 @@ const StaticPage = ({contao}) => {
     );
 };
 
-export const getStaticProps: GetStaticProps = useStaticProps( {server: {host: server}, sitemap: true});
+export const getStaticProps: GetStaticProps = useStaticContao( {server: {host: server}, sitemap: true});
 
 export default StaticPage;

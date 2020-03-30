@@ -1,10 +1,10 @@
 import Link from "next/link";
 import {Button} from "baseui/button";
-import {useContao} from "use-contao";
+import {ContaoCache, useContao} from "use-contao-next";
 
 const server: string = "https://contao.v22019048220387295.hotsrv.de";
 export default () => {
-    const contao = useContao({server: {host: server}, sitemap: true});
+    const contao: ContaoCache = useContao({server: {host: server}, sitemap: true});
 
     return (
         <>

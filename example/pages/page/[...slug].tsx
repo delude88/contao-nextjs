@@ -1,6 +1,6 @@
-import {withContaoSSR} from "use-contao";
+import {withContaoSSR} from "use-contao-next";
 
-const server = "https://contao.v22019048220387295.hotsrv.de";
+const server = "https://conftao.v22019048220387295.hotsrv.de";
 
 const Page = ({contao}) => {
 

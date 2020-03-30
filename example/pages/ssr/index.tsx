@@ -1,4 +1,4 @@
-import {useServerSideProps} from "use-contao";
+import {useServerSideContao} from "use-contao-next";
 import Link from "next/link";
 import {Button} from "baseui/button";
 import {GetServerSideProps} from "next";
@@ -29,7 +29,7 @@ const SSRPage = ( { contao }) => {
     );
 };
 
-export const getServerSideProps: GetServerSideProps = useServerSideProps({
+export const getServerSideProps: GetServerSideProps = useServerSideContao({
     server: {
         host: server,
     },

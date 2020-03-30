@@ -1,6 +1,6 @@
 import Link from "next/link";
 import {Button} from "baseui/button";
-import {useContao, ContaoProvider} from "use-contao";
+import {useContao, ContaoProvider} from "use-contao-next";
 
 export default () => {
     const contao = useContao({sitemap: true});
