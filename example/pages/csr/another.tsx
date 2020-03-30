@@ -4,14 +4,13 @@ import {useContao} from "use-contao";
 
 const server: string = "https://contao.v22019048220387295.hotsrv.de";
 export default () => {
-    const contao = useContao(server);
+    const contao = useContao({server: {host: server}, sitemap: true});
 
     return (
         <>
             <h1>Another dynamic usage of Contao API</h1>
-            {contao && (
+            {contao && contao.sitemap && (
                 <>
-
                     <h1>{contao.sitemap.title}</h1>
                     <p>
                         {contao.sitemap.description}

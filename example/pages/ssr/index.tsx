@@ -1,21 +1,22 @@
-import {withContao} from "use-contao";
+import {useServerSideProps} from "use-contao";
 import Link from "next/link";
 import {Button} from "baseui/button";
+import {GetServerSideProps} from "next";
 
 
 const server = "https://contao.v22019048220387295.hotsrv.de";
 
-const SSRPage = ({contao}) => {
+const SSRPage = ( { contao }) => {
     return (
         <div>
-            <h1>SSR usage of Contao API</h1>
+            <h1>getServerSideProps SSR usage of Contao API</h1>
             {contao && contao.sitemap && (
                 <h1>{contao.sitemap.title}</h1>
             )}
             <p>
                 <Link href="/ssr/another">
                     <Button>
-                        Navigate to another page
+                        Navigate to another page using getInitialProps
                     </Button>
                 </Link>
             </p>
@@ -27,4 +28,12 @@ const SSRPage = ({contao}) => {
         </div>
     );
 };
-export default withContao(SSRPage, server);
+
+export const getServerSideProps: GetServerSideProps = useServerSideProps({
+    server: {
+        host: server,
+    },
+    sitemap: true
+});
+
+export default SSRPage;

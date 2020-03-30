@@ -1,12 +1,19 @@
 import Link from "next/link";
 import {Button} from "baseui/button";
-import {withContao} from "use-contao";
+import {ContaoProvider, useContao} from "use-contao";
+import {useEffect} from "react";
 
-const Page = ({contao}) => {
+export default () => {
+    const contao = useContao({sitemap: true});
+
+    useEffect(() => {
+        console.log("update");
+    }, [contao]);
+
     return (
         <>
             <h1>Dynamic and Context API usage of Contao API</h1>
-            {contao && (
+            {contao && contao.sitemap && (
                 <>
                     <h1>{contao.sitemap.title}</h1>
                     <p>
@@ -29,4 +36,3 @@ const Page = ({contao}) => {
         </>
     )
 };
-export default withContao(Page);

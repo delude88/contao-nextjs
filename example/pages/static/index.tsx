@@ -6,9 +6,10 @@ import {useStaticProps} from "use-contao";
 const server = "https://contao.v22019048220387295.hotsrv.de";
 
 const StaticPage = ({contao}) => {
+    console.log(contao);
     return (
         <div>
-            <h1>SSR usage of Contao API</h1>
+            <h1>Static usage of Contao API</h1>
             {contao && contao.sitemap && (
                 <h1>{contao.sitemap.title}</h1>
             )}
@@ -28,6 +29,6 @@ const StaticPage = ({contao}) => {
     );
 };
 
-export const getStaticProps: GetStaticProps = useStaticProps(server);
+export const getStaticProps: GetStaticProps = useStaticProps( {server: {host: server}, sitemap: true});
 
 export default StaticPage;

@@ -1,4 +1,5 @@
 export interface PageModel {
+    readonly url: string;
     readonly id: number;
     readonly alias: string;
     readonly isPublic: boolean;
@@ -15,6 +16,7 @@ export interface PageModel {
 }
 
 export const PageModelFromJson = (json: any): PageModel => ({
+    url: json.url,
     id: parseInt(json.id),
     alias: json.alias,
     isPublic: json.isPublic,

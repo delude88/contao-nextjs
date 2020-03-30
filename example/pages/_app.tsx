@@ -57,7 +57,7 @@ export default class MyApp extends App<Props> {
                     `
                     }
                     </style>
-                    <ContaoProvider server={server}>
+                    <ContaoProvider host={server}>
                         <Component {...pageProps} />
                     </ContaoProvider>
                 </BaseProvider>

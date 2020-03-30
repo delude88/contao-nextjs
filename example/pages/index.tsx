@@ -20,13 +20,6 @@ export default () => {
                     </Link>
                 </li>
                 <li>
-                    <Link href="/ssr/context">
-                        <a>
-                            Using SSR and Context API (see _app.tsx)
-                        </a>
-                    </Link>
-                </li>
-                <li>
                     <Link href="/csr">
                         <a>
                             Using CSR only
@@ -34,7 +27,7 @@ export default () => {
                     </Link>
                 </li>
                 <li>
-                    <Link href="/ssr/context">
+                    <Link href="/csr/context">
                         <a>
                             Using CSR and Context API (see _app.tsx)
                         </a>

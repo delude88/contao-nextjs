@@ -9,12 +9,12 @@ const server = "https://contao.v22019048220387295.hotsrv.de";
 const StaticPage = ({contao}) => {
     return (
         <div>
-            <h1>Another SSR usage of Contao API</h1>
+            <h1>Another static usage of Contao API</h1>
             {contao && contao.sitemap && (
                 <h1>{contao.sitemap.title}</h1>
             )}
             <p>
-                <Link href="/ssr">
+                <Link href="/static">
                     <Button>
                         Navigate to page before
                     </Button>
@@ -28,6 +28,6 @@ const StaticPage = ({contao}) => {
         </div>
     );
 };
-export const getStaticProps: GetStaticProps = useStaticProps(server);
+export const getStaticProps: GetStaticProps = useStaticProps( {server: {host: server}, sitemap: true});
 
 export default StaticPage;
