@@ -1,5 +1,5 @@
 {
-  "name": "use-contao",
+  "name": "use-contao-next",
   "version": "0.2.0",
   "description": "React hook for using a Contao Backend inside next.js with the Contao Content API",
   "repository": "delude88/use-contao",
