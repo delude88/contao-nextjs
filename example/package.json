@@ -1,5 +1,5 @@
 {
-  "name": "use-contao-example",
+  "name": "use-contao-next-example",
   "version": "0.2.0",
   "description": "Nextjs interface for contao",
   "main": "index.js",
