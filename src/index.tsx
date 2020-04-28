@@ -1,6 +1,7 @@
 import {GetServerSideProps, GetStaticProps} from "next";
 import * as React from "react";
 import {ContaoCache, ContaoInitialRequest, getContao} from "use-contao";
+export * from "use-contao";
 
 export const withContaoSSR = (WrappedComponent: any, options: ContaoInitialRequest) => {
     const WithContaoSSR = (props: { contao: ContaoCache }) => {

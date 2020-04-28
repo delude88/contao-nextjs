@@ -24,6 +24,7 @@
     "styletron-react": "^5.2.7",
     "styletron-server": "^3.0.4",
     "swr": "^0.2.0",
+    "use-contao": "0.2.6",
     "use-contao-next": "0.2.5"
   },
   "devDependencies": {
